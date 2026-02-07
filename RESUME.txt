@@ -1,0 +1,22 @@
+function generateResume(){
+  const content = `
+James Carpio
+
+AI • Business • Engineering
+
+About:
+${document.querySelector("section p").innerText}
+
+Education:
+Mapúa University
+
+Skills:
+Generative AI, Machine Learning, HR Management, Business Communication
+  `;
+
+  const blob = new Blob([content], { type: "application/pdf" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "James_Carpio_Resume.pdf";
+  link.click();
+}
